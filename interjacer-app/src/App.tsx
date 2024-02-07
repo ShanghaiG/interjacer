@@ -1,9 +1,9 @@
-import { LandingPage } from "./pages/Landing";
+import { PublicLayout } from "./layout/public/PublicLayout";
 
 function App() {
   return (
-    <div className="">
-      <LandingPage />
+    <div className="h-screen">
+      <PublicLayout />
     </div>
   );
 }
