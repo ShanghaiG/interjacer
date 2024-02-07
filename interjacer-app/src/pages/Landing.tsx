@@ -9,9 +9,9 @@ export const LandingPage = () => {
       <Navbar />
       <Carousel
         layersData={[
-          { title: "Layer 1", backgroundURL: slider1 },
-          { title: "Layer 2", backgroundURL: slider2 },
-          { title: "Layer 3", backgroundURL: slider3 },
+          { title: "DLA CIEBIE", backgroundURL: slider1 },
+          { title: "DLA RODZINY", backgroundURL: slider2 },
+          { title: "DLA FIRMY", backgroundURL: slider3 },
         ]}
       />
     </div>

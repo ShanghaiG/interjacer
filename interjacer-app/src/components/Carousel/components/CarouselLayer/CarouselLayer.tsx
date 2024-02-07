@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTimers } from "src/hooks";
 import { twJoin } from "tailwind-merge";
-
+import { CarouselLayerBackground } from "./components/CarouselLayerBackground/CarouselLayerBackground";
+import { CarouselLayerLogo } from "./components/CarouselLayerLogo/CarouselLayerLogo";
+import { CarouselLayerTitle } from "./components/CarouselLayerTitle/CarouselLayerTitle";
+import { CarouselLayerOfferButton } from "./components/CarouselLayerOfferButton/CarouselLayerOfferButton";
 interface CarouselLayerProps {
   title: string;
   isShow: boolean;
@@ -13,36 +16,39 @@ export const CarouselLayer = ({
   backgroundURL,
   isShow,
 }: CarouselLayerProps) => {
-  const [isLocalOpen, setLocalOpen] = useState(isShow);
+  const [isLocalShow, setLocalShow] = useState(isShow);
   const { newTimer, clearAllTimers } = useTimers();
   useEffect(() => {
-    if (isShow && !isLocalOpen) {
-      newTimer(() => setLocalOpen(true), 50);
+    if (isShow && !isLocalShow) {
+      newTimer(() => setLocalShow(true), 50);
     }
 
-    if (!isShow && isLocalOpen) {
-      newTimer(() => setLocalOpen(false), 1000);
+    if (!isShow && isLocalShow) {
+      newTimer(() => setLocalShow(false), 1000);
     }
-  }, [clearAllTimers, isLocalOpen, isShow, newTimer]);
+  }, [clearAllTimers, isLocalShow, isShow, newTimer]);
 
   useEffect(() => clearAllTimers);
 
   return (
-    <div
-      className={twJoin(
-        "absolute w-full h-full flex justify-center items-center text-3xl duration-[1500ms] select-none",
-        !isShow && !isLocalOpen ? "hidden" : "",
-        !isShow && isLocalOpen ? "scale-50 opacity-0 z-20" : "",
-        isShow && isLocalOpen ? "" : "",
-        isShow && !isLocalOpen ? "scale-150 opacity-0 z-10" : ""
-      )}
-    >
-      <img
-        src={backgroundURL}
-        alt=""
-        className="h-full w-full object-cover absolute"
-      />
-      <div className="relative">{title}</div>
-    </div>
+    <>
+      <div
+        className={twJoin(
+          "absolute w-full h-full flex justify-center items-center duration-[1500ms]",
+          !isShow && !isLocalShow ? "hidden" : "",
+          !isShow && isLocalShow ? "scale-50 opacity-0 z-20" : "",
+          isShow && !isLocalShow ? "scale-150 opacity-0 z-10" : ""
+        )}
+      >
+        <CarouselLayerLogo isShow={isShow} isLocalShow={isLocalShow} />
+        <CarouselLayerTitle
+          title={title}
+          isShow={isShow}
+          isLocalShow={isLocalShow}
+        />
+        <CarouselLayerOfferButton isShow={isShow} isLocalShow={isLocalShow} />
+        <CarouselLayerBackground backgroundURL={backgroundURL} />
+      </div>
+    </>
   );
 };

@@ -20,7 +20,7 @@ export const CarouselButton = ({ site, onClick }: CarouselButtonProps) => {
         className={twJoin(
           "absolute z-50 top-1/2 translate-y-[-50%] opacity-0 w-10 h-10 rounded duration-300",
           "group-hover:bg-black/50 group-hover:opacity-100 ",
-          site === "LEFT" ? "left-10" : "right-10"
+          site === "LEFT" ? "md:left-10 left-5" : "md:right-10 right-5"
         )}
       >
         <div className="text-2xl text-slate-100 h-full">
