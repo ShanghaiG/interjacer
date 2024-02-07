@@ -11,7 +11,7 @@ export const CarouselLayerLogo = ({
   isLocalShow,
 }: CarouselLayerLogoProps) => {
   return (
-    <div className="absolute top-1/4 translate-y-[-25%] z-50 overflow-hidden">
+    <div className="absolute md:top-[20%] md:translate-y-[-50%] sm:top-[30%] sm:translate-y-[-50%] md:scale-100 scale-75 top-[20%] translate-y-[-50%] z-50 overflow-hidden">
       <img
         src={logoInterJacer}
         className={twJoin(

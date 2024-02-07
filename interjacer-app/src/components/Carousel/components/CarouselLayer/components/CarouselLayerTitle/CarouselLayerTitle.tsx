@@ -15,7 +15,7 @@ export const CarouselLayerTitle = ({
     <div className="relative overflow-hidden">
       <div
         className={twJoin(
-          "relative text-5xl font-bold z-50 text-white duration-[1000ms]",
+          "relative md:text-5xl text-3xl font-bold z-50 text-white duration-[1000ms]",
           !isShow && isLocalShow ? "translate-y-full opacity-50" : ""
         )}
       >
