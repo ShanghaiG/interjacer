@@ -8,9 +8,9 @@ import { RiMailSendLine } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
 export const Footer = () => {
   return (
-    <div className="">
+    <div>
       <FooterContact />
-      <div className="bg-gradient-to-b from-neutral-600 to-neutral-700 p-10 pb-2 flex justify-center">
+      <footer className="bg-gradient-to-b from-neutral-600 to-neutral-700 p-10 pb-2 flex justify-center">
         <div className="max-w-7xl w-screen">
           <div className="grid grid-cols-3 gap-5">
             <FooterAbout className="col-span-3 md:col-span-1" />
@@ -47,7 +47,7 @@ export const Footer = () => {
             </div>
           </FooterSection>
         </div>
-      </div>
+      </footer>
     </div>
   );
 };
