@@ -2,11 +2,11 @@ import React from "react";
 
 const Modal = ({ title, content, onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-center overflow-y-auto overflow-x-hidden">
-      <div className="relative p-4 w-full max-w-4xl h-full md:h-auto">
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-start md:items-center overflow-y-auto overflow-x-hidden p-4 md:p-0">
+      <div className="relative mx-auto w-full max-w-2xl h-full md:h-auto mt-20 md:mt-0">
         <div className="relative rounded-lg shadow bg-gray-100">
           <div className="flex justify-between items-center p-5 rounded-t border-b">
-            <h3 className="text-xl font-exo-medium  text-lime-600">{title}</h3>
+            <h3 className="text-xl font-exo-medium text-lime-600">{title}</h3>
             <button
               type="button"
               className="text-lime-600 bg-transparent hover:bg-lime-300 hover:text-lime-700 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"

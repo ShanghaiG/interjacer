@@ -8,11 +8,11 @@ export const HeroSection = () => {
     <>
       <HeroDescription />
 
-      <div className="w-1/2 mx-auto mt-2">
+      <div className="w-4/5 2xl:w-1/2 mx-auto mt-2">
         <Divider />
       </div>
 
-      <div className="w-1/2 mx-auto mt-6">
+      <div className="w-4/5 2xl:w-1/2 mx-auto mt-6">
         <HeroGrid items={gridItems} />
       </div>
     </>

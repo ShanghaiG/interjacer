@@ -13,9 +13,12 @@ const HeroGrid = ({ items }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {items.map((item, index) => (
-        <div key={index} className="flex flex-col justify-between p-2 h-full">
+        <div
+          key={index}
+          className="flex flex-col justify-between  md:p-2 h-full"
+        >
           <div>
             <img src={item.image} alt={item.title} className="w-full mb-2" />
             <div className="text-center mt-4">
@@ -32,7 +35,7 @@ const HeroGrid = ({ items }) => {
             </div>
           </div>
 
-          <div className="text-center mt-4 pb-8">
+          <div className="text-center mt-2 md:mt-4 pb-3 md:pb-8">
             <button
               onClick={() => openModal(item)}
               className="text-lg text-lime-600 hover:text-lime-400 font-semibold"
