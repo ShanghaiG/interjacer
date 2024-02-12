@@ -4,9 +4,11 @@ import Modal from "../Modal/Modal";
 const HeroGrid = ({ items }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
 
-  const openModal = (content) => {
-    setModalContent(content);
+  const openModal = (item) => {
+    setModalTitle(item.title);
+    setModalContent(item.modalContent);
     setModalOpen(true);
   };
 
@@ -32,7 +34,7 @@ const HeroGrid = ({ items }) => {
 
           <div className="text-center mt-4 pb-8">
             <button
-              onClick={() => openModal(item.text)}
+              onClick={() => openModal(item)}
               className="text-lg text-lime-600 hover:text-lime-400 font-semibold"
             >
               Dowiedz się więcej
@@ -42,7 +44,11 @@ const HeroGrid = ({ items }) => {
       ))}
 
       {isModalOpen && (
-        <Modal content={modalContent} onClose={() => setModalOpen(false)} />
+        <Modal
+          title={modalTitle}
+          content={modalContent}
+          onClose={() => setModalOpen(false)}
+        />
       )}
     </div>
   );
